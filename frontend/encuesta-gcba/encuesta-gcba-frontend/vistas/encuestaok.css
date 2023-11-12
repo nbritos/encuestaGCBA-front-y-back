@@ -1,0 +1,84 @@
+/* Estilos para el cuerpo del documento */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 10px;
+}
+
+/* Estilos para el logo en el encabezado */
+.logo img {
+    width: 330px;
+    height: auto;
+}
+
+/* Estilos para el contenido principal */
+main {
+    text-align: center;
+    margin: 170px;
+}
+
+.validacion {
+    width: 70px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.success-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.success-button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    line-height: 30px;
+}
+
+/* Estilos para los enlaces en el footer */
+.info a, .info2 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+.footer img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.info, .info2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo para las imágenes en el footer */
+.redes img {
+    max-width: 40px;
+    margin: 10px;
+}
+
+.info span{
+    margin-inline: 10px;
+}
+

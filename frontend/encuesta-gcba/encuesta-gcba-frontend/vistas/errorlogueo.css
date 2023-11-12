@@ -1,0 +1,99 @@
+/* Estilos para el cuerpo del documento */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffcc00; /* Fondo amarillo */
+    padding: 10px;
+    width: 100%
+}
+
+/* Estilos para el logo en el encabezado */
+.logo img {
+    width: 330px;
+}
+
+/* Estilos para el contenido principal */
+main {
+    text-align: center;
+    margin: 170px;
+}
+
+.validacion {
+    width: 75px;
+}
+
+/* Estilos del mensaje de advertencia */
+.advertencia {
+    background-color: #ff6961; /* Color rojo suave */
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.advertencia:hover {
+    background-color: #ff5751; /* Color rojo suave más oscuro al pasar el mouse */
+}
+
+button {
+   background-color: #4caf50; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+
+footer {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    line-height: 30px;
+}
+
+/* Estilos para los enlaces en el footer */
+.info a, .info2 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Estilos para teléfonos en el pie de página */
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.info span{
+    margin-inline: 10px;
+}
+
+/* Estilo para las imágenes en el footer */
+.redes img {
+    max-width: 40px;
+    margin: 10px;
+}
+
+.redes a {
+    display: inline-block;
+}

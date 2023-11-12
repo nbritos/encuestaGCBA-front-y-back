@@ -1,0 +1,123 @@
+/* Estilos para el cuerpo del documento */
+.container{
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+body {
+    background-color: #ffffff; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 10px;
+    /*width: 100%*/
+    margin-bottom: 200px;
+}
+
+/* Estilos para el logo en el encabezado */
+.logo img {
+    width: 330px;
+}
+
+/* Estilos para el contenido principal */
+main {
+    
+    text-align: center;
+    /*margin: 200px;*/
+    
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+label {
+    display: block;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}	
+input[type="text"] {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Centra el texto horizontalmente dentro del botón */
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+button {
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 5px; /* Botones redondeados */
+    .dni-btn:active {
+        background-color: yellow;
+        color: black;
+    }
+    
+    
+}
+
+button:hover {
+    background-color: yellow;
+    transform: scale(1.01); /* Agrandar al hacer hover */
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 200px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    line-height: 30px;
+}
+
+
+/* Estilos para los enlaces en el pie de página */
+.info a, .info2 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Estilos para teléfonos en el pie de página */
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.info span{
+    margin-inline: 10px;
+}
+
+.redes img {
+    width: 40px;
+    margin: 10px;
+}

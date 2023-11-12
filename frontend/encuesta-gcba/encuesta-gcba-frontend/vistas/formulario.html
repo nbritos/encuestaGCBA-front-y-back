@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0">
+ <title>Formulario</title>
+ <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+		<img src="images\logos\logos-nav.png" alt="logo">
+		</div>
+		</header>
+        <main>
+
+        	<!--	<form class="" action="datos.html" method="get"> -->
+		<form>
+            <h1>Encuesta de Satisfacción GCBA</h1>
+
+            <div class="container">
+
+            	<div class="question" id="q1">
+
+            		<label for="mail"> <b> Mail </b> </label> <br>
+            		<input type="text" placeholder="Escriba su mail" name="mail">
+           		</div>
+
+            	<div class="question" id="q2"> <b> DNI o Nro Pasaporte </b> <br>
+            		<input type="text" placeholder="DNI o Nro Pasaporte" maxlength="8" required onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+            	</div>            	
+            	<div class="question" id="q3"> <b> Género </b>
+            		<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio3" value="M"> Masculino </div>
+	                	<div class="answer"> <input type="radio" name="radio3" value="F"> Femenino </div>
+	                	<div class="answer"> <input type="radio" name="radio3" value="NB"> No Binario </div>
+                	</div>
+            	</div>
+            	<div class="question" id="q4"> 
+            		<label for="lugar"> <b> Lugar de residencia </b> </label> <br>
+            		<input type="text" placeholder="Escriba su lugar de residencia" name="lugar" size="30px">
+            	</div>
+
+            	<div class="question" id="q5"> <b> ¿Cuál es tu máximo nivel de estudios alcanzado? </b><br>
+            		<select name="">
+            				<option value="SC"> Secundario completo </option>
+            				<option value="SI"> Secundario incompleto </option>
+            				<option value="TC"> Terciario completo </option>
+            				<option value="TI"> Terciario incompleto </option>
+            				<option value="UC"> Universitario completo </option>
+            				<option value="UI"> Universitario incompleto </option>
+            				<option value="PC"> Posgrado completo </option>
+            				<option value="PI"> Posgrado incompleto </option>
+            		</select>
+            	</div>
+            	<div class="question" id="q6"> <b>¿En qué cuatrimestre cursaste Codo a Codo? <br> En caso de haber cursado más de una vez respondenos por tu última experiencia </b>
+            		<div class="select">
+            			<select name="">
+            				<option value="2C21"> 2do Cuatrimestre 2021 </option>
+            				<option value="1C22"> 1er Cuatrimestre 2022 </option>
+            				<option value="2C22"> 2do Cuatrimestre 2022 </option>
+            				<option value="1C23"> 1er Cuatrimestre 2023 </option>
+            			</select>
+            		</div>
+            	</div>
+            	<div class="question" id="q7"> <b> ¿De qué curso de Codo a Codo egresaste? <br> En caso de haber egresado de más de un curso respondé por el último</b><br>
+    				<div class="radioAnswer">
+		    			<div class="answer"> <input type="radio" name="radio7" value="BD"> Big Data </div>
+		    			<div class="answer"> <input type="radio" name="radio7" value="UX-UI"> Diseño UX/UI </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="FS-Java"> FullStack - Java </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="FS-JS-ND"> FullStack - JavaScript/Node.js </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="FS-PHP"> FullStack - PHP </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="FS-P"> FullStack - Python </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="PI"> Programación Inicial </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="TQA"> Testing QA + Automatización </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="Django"> Django </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="React"> React </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="Spring"> Spring </div>
+		    			<div class="answer">	<input type="radio" name="radio7" value="Unity"> Unity </div>
+		    		</div>
+            	</div>
+            	<div class="question" id="q8"> <b>¿Cuánto crees que Codo a Codo te ayudó a mejorar tu perfil para buscar trabajo o mejorar tu desempeño y crecimiento laboral?</b>
+            		<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio8" value="M"> Muchísimo </div>
+	                	<div class="answer"> <input type="radio" name="radio8" value="B"> Bastante </div>
+	                	<div class="answer"> <input type="radio" name="radio8" value="P"> Poco </div>
+	                	<div class="answer"> <input type="radio" name="radio8" value="N"> Nada </div>
+	                	<div class="answer"> <input type="radio" name="radio8" value="I"> Indistinto </div>
+                	</div>
+            	</div>
+            	<div class="question" id="q9"> <b>Cuando terminaste de cursar Codo a Codo, ¿continuaste con algún otro estudio vinculado al sector IT?</b>
+            		<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio19" value="S"> Si </div>
+	                	<div class="answer"> <input type="radio" name="radio19" value="N"> No </div>
+	            	</div>
+            	</div>
+            	<div class="question" id="q10"> <b>¿Qué tipo de estudios continuaste realizando en el sector IT luego de Codo a Codo? </b><br>
+            		<select name="">
+            				<option value="CCG"> Curso de duración cuatrimestral gratuito </option>
+            				<option value="CCP"> Curso de duración cuatrimestral pago </option>
+            				<option value="CAG"> Curso de duración anual gratuito </option>
+            				<option value="CAP"> Curso de duración anual pago </option>
+            				<option value="ETG"> Estudios de nivel terciario gratuito </option>
+            				<option value="ETP"> Estudios de nivel terciario pago </option>
+            				<option value="EUG"> Estudio de nivel universitario gratuito </option>
+            				<option value="EUP"> Estudio de nivel universitario pago </option>
+            				<option value="OTRO?"> Otro </option>
+            		</select>
+            	</div>
+            	<div class="question" id="q11"> <b>¿Cuál creés que es tu nivel en programación?</b>
+	            	<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio11" value="S"> Senior </div>
+	                	<div class="answer"> <input type="radio" name="radio11" value="SS"> Semi Senior </div>
+	                	<div class="answer"> <input type="radio" name="radio11" value="J"> Junior </div>
+	                	<div class="answer"> <input type="radio" name="radio11" value="T"> Trainee </div>
+	                </div>
+	            </div>
+            	<div class="question" id="q12"> <b> ¿Cuál es tu situación laboral? </b>
+            		<div class="select">
+            			<select name="">
+            				<option value="T"> Trabajo </option>
+            				<option value="NTyB"> No trabajo y busco trabajo </option>
+            				<option value="NTyNB"> No trabajo y no busco trabajo </option>
+            				<option value="JP"> Jubilado/a y/o pensionado/a </option>
+            			</select>
+            		</div>
+            	</div>
+            	<div class="question" id="q13"> <b>Actualmente tu trabajo es...</b>
+            		<div class="select">
+            			<select name="">
+            				<option value="RelDep"> En relación de dependencia </option>
+            				<option value="Monot"> Soy monotributista </option>
+            				<option value="TrabInf"> Trabajo de manera informal </option>
+            			</select>
+            		</div>
+            	</div>
+            	<div class="question" id="q14"> <b>¿Tu puesto de trabajo actual esta relacionado con el sector IT?</b>
+            		<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio14" value="S"> Si </div>
+	                	<div class="answer"> <input type="radio" name="radio14" value="N"> No </div>
+	            	</div>
+            	</div>
+            	<div class="question" id="q15"> <b>¿Trabajás actualmente como programador?</b>
+            		<div class="radioAnswer">
+	            		<div class="answer"> <input type="radio" name="radio15" value="S"> Si </div>
+	                	<div class="answer"> <input type="radio" name="radio15" value="N"> No </div>
+	            	</div>
+            	</div>
+            	<div class="question" id="q16"><b>A través del Programa "Oportunidades Laborales", La Agencia de Aprendizaje a lo largo de la Vida ofrece a nuestros egresados/as búsquedas laborales que se ajustan a sus perfiles profesionales <br> ¿Te interesaría recibir búsquedas laborales ajustadas a tu perfil?</b>
+	            	<div class="radioAnswer">
+		            		<div class="answer"> <input type="radio" name="radio16" value="S"> Si </div>
+		                	<div class="answer"> <input type="radio" name="radio16" value="N"> No </div>
+		            </div>
+		        </div>
+            	
+            </div>
+
+
+                    <button type="button" class="btn btn-primary" onclick="location.href='encuestaok.html'">ENVIAR</button>
+                    <!-- <input type="submit"> -->
+		</form>
+   
+	</main>
+	
+	<footer>
+		<img src="images\logos\ba_vamosba_blanco.png">
+		<h2>Telefonos útiles</h2>
+		<div class="info">
+			<span>102 - Niñez y Adolescencia</span>
+			<span>103 - Emergencias</span>
+			<span>107 - SAME</span> 
+			<span>911 - Policía</span>
+			<span>144 - Violencia de género</span>
+			<span>147 - Atención Ciudadana</span>
+		</div>
+		<hr>
+
+		<h2>Redes de la ciudad</h2>
+		<div class="redes">
+			<a href="https://twitter.com/gcba" target="_blank">
+	    <img src="images\social\social-tw.png" alt="Twitter">
+			</a>
+			<a href="https://www.instagram.com/buenosaires/" target="_blank">
+	    <img src="images\social\social-in.png" alt="Instagram">
+			</a>
+			<a href="https://www.facebook.com/GCBA" target="_blank">
+	    <img src="images\social\social-fb.png" alt="Facebook">
+			</a>
+		</div>
+
+		<div class="info2">
+			<a href="https://boletinoficial.buenosaires.gob.ar/">
+				<span>Boletín oficial</span> </a>
+			<a href="">
+				<span>Términos y condiciones</span> </a>
+			<a href="">
+				<span>Política de privacidad</span> </a>
+			<a href="">
+				<span>Oficios judiciales</span> </a>
+			<a href="">
+				<span>Transparencia</span> </a>
+		</div>
+		 <p> 2023 Tu Compañía. Todos los derechos reservados.</p>
+	</footer>
+</body>
+
+</html>
