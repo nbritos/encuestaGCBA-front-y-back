@@ -26,6 +26,11 @@ public class Respuesta {
     }
 
     public void setPregunta(Pregunta pregunta) {
+        this.pregunta=pregunta;
     }
+
+    /*public void setPregunta_id(int preguntaId){
+        this.pregunta_id=preguntaId;
+    }*/
 }
 
