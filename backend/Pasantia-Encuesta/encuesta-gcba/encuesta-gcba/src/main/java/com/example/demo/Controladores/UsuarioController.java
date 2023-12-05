@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/usuario")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8081/")
 public class UsuarioController {
 
     private static final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
@@ -23,8 +23,6 @@ public class UsuarioController {
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
-
-
     // Endpoint para crear un nuevo usuario
     @PostMapping("/crear")
     public ResponseEntity<String> crearUsuario(@RequestBody Usuario usuario) {
@@ -49,7 +47,4 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado para el documento: " + documento);
         }
     }
-
-    // Otros métodos del controlador...
-
 }

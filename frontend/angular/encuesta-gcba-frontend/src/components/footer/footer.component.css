@@ -1,0 +1,29 @@
+body{
+    margin-top: 200px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    line-height: 30px;
+}
+
+.redes img {
+    width: 40px;
+    margin: 10px;
+}
+
+.info a, .info2 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.info span{
+    margin-inline: 10px;
+}
