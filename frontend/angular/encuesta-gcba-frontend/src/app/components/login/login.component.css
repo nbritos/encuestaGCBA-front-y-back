@@ -1,92 +1,103 @@
-
+/* Estilos para el cuerpo del documento */
 .container{
     display:flex;
     flex-direction:column;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
+    align-items: center;
     
 }
-/* Estilos para el cuerpo del documento */
+
 body {
-    background-color: #ffffff;
+    background-color: #ffffff; 
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
-/* Estilos para el encabezado */
 header {
     background-color: #ffcc00;
     padding: 10px;
-    /*width: 100%;*/
-    
+    /*width: 100%*/
+    margin-bottom: 200px;
 }
-
 
 /* Estilos para el logo en el encabezado */
 .logo img {
     width: 330px;
-    
 }
 
 /* Estilos para el contenido principal */
 main {
     
-   /* margin: 20px;*/
-    
-    text-align:center;
-    flex: 1;
+    text-align: center;
+    /*margin: 200px;*/
     
 }
 
-/* Estilos para el título principal */
 h1 {
-    margin-top: 10;
-    font-size: 20px;
+    font-size: 24px;
     color: #333;
 }
 
+label {
+    display: block;
+}
 
-.item1{
-    
-    background-color: rgb(225, 221, 221);
-    padding:1px;
-    margin-top: 14px;
-    
-    
-}
-.item2{
-    text-align: center;
+.formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 40px;
-    margin-top: 85px;
+}	
+input[type="text"] {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Centra el texto horizontalmente dentro del botón */
 }
-/* Estilos para los botones */
+
+::placeholder {
+    color: #ccc;
+}
+
 button {
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
     background-color: yellow;
     color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 10px;
+    margin: 15px;
     border-radius: 5px; /* Botones redondeados */
-    transition: all 0.3s ease;
+    .dni-btn:active {
+        background-color: yellow;
+        color: black;
+    }
+    
+    
 }
 
 button:hover {
     background-color: yellow;
-    transform: scale(1.1); /* Agrandar al hacer hover */
+    transform: scale(1.01); /* Agrandar al hacer hover */
     font-weight: bold;
 }
 
-/* Estilos para el pie de página */
 footer {
+    margin-top: 200px;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
     line-height: 30px;
 }
+
 
 /* Estilos para los enlaces en el pie de página */
 .info a, .info2 a {
@@ -106,20 +117,7 @@ footer {
     margin-inline: 10px;
 }
 
-/* Estilos para las imágenes de las redes sociales */
 .redes img {
-    max-width: 40px;
+    width: 40px;
     margin: 10px;
 }
-
-/* Estilos para pantallas más pequeñas (menores de 338px de ancho) */
-@media (max-width: 337px) {
-    .item1 {
-        display: none; /* Ocultar .item1 en pantallas pequeñas */
-    }
-
-    .item2 {
-        margin-bottom: 20px; /* Reduce el margen inferior de .item2 en pantallas pequeñas */
-    }
-}
-
