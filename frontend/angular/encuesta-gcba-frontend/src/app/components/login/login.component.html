@@ -1,15 +1,11 @@
-<main>
-    <h1>Complete el siguiente campo para realizar la encuesta</h1>
+<h1>Complete el siguiente campo para realizar la encuesta</h1>
+<form (submit)="ingresar()" method="post">
+    <fieldset>
+        <div>
 
-    <div>
-        <form>
-            <input type="text" id="dniInput" placeholder="DNI" maxlength="8" required
-                onkeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+            <input type="text" [(ngModel)]="nuevo.documento" name="nuevo.documento" placeholder="DNI">
+            <button (click)="validarDNI()">VERIFICAR</button>
+        </div>
+    </fieldset>
 
-            <button (click)="verificarDNI()">VERIFICAR</button>
-            <!--<button onclick="location.href='formulario.html'">VERIFICAR</button>-->
-        </form>
-    </div>
-
-
-</main>
+</form>

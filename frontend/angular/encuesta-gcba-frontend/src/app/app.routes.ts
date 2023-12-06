@@ -8,6 +8,10 @@ export const routes: Routes = [
         pathMatch:'full',
         redirectTo:'encuesta/login'
     },
+    // {
+    //     path:'*',
+    //     redirectTo:'encuesta/login'
+    // },
     {
         path:'encuesta/responder',
         component:EncuestaResponderComponent
