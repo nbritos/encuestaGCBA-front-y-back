@@ -5,6 +5,7 @@
 
             <input type="text" [(ngModel)]="nuevo.documento" name="nuevo.documento" placeholder="DNI">
             <button (click)="validarDNI()">VERIFICAR</button>
+            <div *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
         </div>
     </fieldset>
 

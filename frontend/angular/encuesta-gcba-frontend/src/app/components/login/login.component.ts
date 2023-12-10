@@ -4,12 +4,13 @@ import { Usuario } from '../models/usuarioModel';
 import { UsuariosService } from '../../services/usuarios.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,HttpClientModule],
-  providers:[UsuariosService],
+  imports: [FormsModule, HttpClientModule, CommonModule],
+  providers: [UsuariosService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   nuevo: Usuario = {};
+  mensajeError: string = "";
 
   constructor(private router: Router, private usuarioService: UsuariosService) {
     this.nuevo.documento = "";
@@ -30,11 +32,19 @@ export class LoginComponent implements OnInit {
     this.usuarioService.loginUsuario(this.nuevo).subscribe(
       (res: any) => {
         console.log(res);
-        if (res.login == "ok") {
+        if (res) {
           console.log("login exitoso");
           this.usuarioService.setToken(res.token);
           console.log(res.token);
           this.router.navigate(['encuesta/responder'])
+        }
+      },
+      (error: any) => {
+        console.error(error);
+        if (error.status === 404) {
+          this.mensajeError = "Documento no encontrado.";
+        } else {
+          this.mensajeError = "Error en el servidor. Inténtelo nuevamente.";
         }
       }
     );

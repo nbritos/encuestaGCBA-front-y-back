@@ -1,34 +1,37 @@
 <body>
     <fieldset>
-        <form (submit)="enviarEncuesta()" method="post">
+        <form (submit)="enviarEncuesta()" method="post" [formGroup]="form">
             <h1>Encuesta de Satisfacción GCBA</h1>
+            <div>{{form.value | json}}</div>
 
             <div class="container">
 
                 <div class="question" id="q1">
 
                     <label for="mail"> <b> Mail </b> </label> <br>
-                    <input type="text" placeholder="Escriba su mail" name="mail">
+                    <input type="text" placeholder="Escriba su mail" name="mail" formControlName="mail">
                 </div>
 
-                <div class="question" id="q2"> <b> DNI o Nro Pasaporte </b> <br>
+                <!-- si se logea por dni es innecesario volverlo a ingresar en respuesta-->
+                <!-- <div class="question" id="q2"> <b> DNI o Nro Pasaporte </b> <br>
                     <input type="text" placeholder="DNI o Nro Pasaporte" maxlength="8" required
                         onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                 </div>
                 <div class="question" id="q3"> <b> Género </b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio3" value="M"> Masculino </div>
-                        <div class="answer"> <input type="radio" name="radio3" value="F"> Femenino </div>
-                        <div class="answer"> <input type="radio" name="radio3" value="NB"> No Binario </div>
+                        <div class="answer"> <input type="radio" name="genero" value="M" formControlName="genero"> Masculino </div>
+                        <div class="answer"> <input type="radio" name="genero" value="F" formControlName="genero"> Femenino </div>
+                        <div class="answer"> <input type="radio" name="genero" value="NB" formControlName="genero"> No Binario </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="question" id="q4">
                     <label for="lugar"> <b> Lugar de residencia </b> </label> <br>
-                    <input type="text" placeholder="Escriba su lugar de residencia" name="lugar" size="30px">
+                    <input type="text" placeholder="Escriba su lugar de residencia" name="lugar" size="30px"
+                        formControlName="lugarDeResidencia">
                 </div>
 
                 <div class="question" id="q5"> <b> ¿Cuál es tu máximo nivel de estudios alcanzado? </b><br>
-                    <select name="">
+                    <select name="" formControlName="nivelDeEstudios">
                         <option value="SC"> Secundario completo </option>
                         <option value="SI"> Secundario incompleto </option>
                         <option value="TC"> Terciario completo </option>
@@ -43,7 +46,7 @@
                         cursado
                         más de una vez respondenos por tu última experiencia </b>
                     <div class="select">
-                        <select name="">
+                        <select name="" formControlName="cuatrimestreCodo">
                             <option value="2C21"> 2do Cuatrimestre 2021 </option>
                             <option value="1C22"> 1er Cuatrimestre 2022 </option>
                             <option value="2C22"> 2do Cuatrimestre 2022 </option>
@@ -55,42 +58,61 @@
                         egresado de
                         más de un curso respondé por el último</b><br>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio7" value="BD"> Big Data </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="UX-UI"> Diseño UX/UI </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="FS-Java"> FullStack - Java </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="FS-JS-ND"> FullStack -
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="BD" formControlName="cursoCodo">
+                            Big Data </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="UX-UI"
+                                formControlName="cursoCodo"> Diseño UX/UI </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="FS-Java"
+                                formControlName="cursoCodo"> FullStack - Java </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="FS-JS-ND"
+                                formControlName="cursoCodo"> FullStack -
                             JavaScript/Node.js </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="FS-PHP"> FullStack - PHP </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="FS-P"> FullStack - Python </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="PI"> Programación Inicial </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="TQA"> Testing QA + Automatización
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="FS-PHP"
+                                formControlName="cursoCodo"> FullStack - PHP </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="FS-P" formControlName="cursoCodo">
+                            FullStack - Python </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="PI" formControlName="cursoCodo">
+                            Programación Inicial </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="TQA" formControlName="cursoCodo">
+                            Testing QA + Automatización
                         </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="Django"> Django </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="React"> React </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="Spring"> Spring </div>
-                        <div class="answer"> <input type="radio" name="radio7" value="Unity"> Unity </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="Django"
+                                formControlName="cursoCodo"> Django </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="React"
+                                formControlName="cursoCodo"> React </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="Spring"
+                                formControlName="cursoCodo"> Spring </div>
+                        <div class="answer"> <input type="radio" name="cursoCodo" value="Unity"
+                                formControlName="cursoCodo"> Unity </div>
                     </div>
                 </div>
                 <div class="question" id="q8"> <b>¿Cuánto crees que Codo a Codo te ayudó a mejorar tu perfil para buscar
                         trabajo o mejorar tu desempeño y crecimiento laboral?</b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio8" value="M"> Muchísimo </div>
-                        <div class="answer"> <input type="radio" name="radio8" value="B"> Bastante </div>
-                        <div class="answer"> <input type="radio" name="radio8" value="P"> Poco </div>
-                        <div class="answer"> <input type="radio" name="radio8" value="N"> Nada </div>
-                        <div class="answer"> <input type="radio" name="radio8" value="I"> Indistinto </div>
+                        <div class="answer"> <input type="radio" name="desempenioCodo" value="M"
+                                formControlName="desempenioCodo"> Muchísimo </div>
+                        <div class="answer"> <input type="radio" name="desempenioCodo" value="B"
+                                formControlName="desempenioCodo"> Bastante </div>
+                        <div class="answer"> <input type="radio" name="desempenioCodo" value="P"
+                                formControlName="desempenioCodo"> Poco </div>
+                        <div class="answer"> <input type="radio" name="desempenioCodo" value="N"
+                                formControlName="desempenioCodo"> Nada </div>
+                        <div class="answer"> <input type="radio" name="desempenioCodo" value="I"
+                                formControlName="desempenioCodo"> Indistinto </div>
                     </div>
                 </div>
                 <div class="question" id="q9"> <b>Cuando terminaste de cursar Codo a Codo, ¿continuaste con algún otro
                         estudio vinculado al sector IT?</b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio19" value="S"> Si </div>
-                        <div class="answer"> <input type="radio" name="radio19" value="N"> No </div>
+                        <div class="answer"> <input type="radio" name="continuaEstudiando" value="S"
+                                formControlName="continuaEstudiando"> Si </div>
+                        <div class="answer"> <input type="radio" name="continuaEstudiando" value="N"
+                                formControlName="continuaEstudiando"> No </div>
                     </div>
                 </div>
                 <div class="question" id="q10"> <b>¿Qué tipo de estudios continuaste realizando en el sector IT luego de
                         Codo a Codo? </b><br>
-                    <select name="">
+                    <select name="" formControlName="tipoDeEstudio">
                         <option value="CCG"> Curso de duración cuatrimestral gratuito </option>
                         <option value="CCP"> Curso de duración cuatrimestral pago </option>
                         <option value="CAG"> Curso de duración anual gratuito </option>
@@ -104,15 +126,19 @@
                 </div>
                 <div class="question" id="q11"> <b>¿Cuál creés que es tu nivel en programación?</b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio11" value="S"> Senior </div>
-                        <div class="answer"> <input type="radio" name="radio11" value="SS"> Semi Senior </div>
-                        <div class="answer"> <input type="radio" name="radio11" value="J"> Junior </div>
-                        <div class="answer"> <input type="radio" name="radio11" value="T"> Trainee </div>
+                        <div class="answer"> <input type="radio" name="nivelEnProgramacion" value="S"
+                                formControlName="nivelEnProgramacion"> Senior </div>
+                        <div class="answer"> <input type="radio" name="nivelEnProgramacion" value="SS"
+                                formControlName="nivelEnProgramacion"> Semi Senior </div>
+                        <div class="answer"> <input type="radio" name="nivelEnProgramacion" value="J"
+                                formControlName="nivelEnProgramacion"> Junior </div>
+                        <div class="answer"> <input type="radio" name="nivelEnProgramacion" value="T"
+                                formControlName="nivelEnProgramacion"> Trainee </div>
                     </div>
                 </div>
                 <div class="question" id="q12"> <b> ¿Cuál es tu situación laboral? </b>
                     <div class="select">
-                        <select name="">
+                        <select name="" formControlName="situacionLaboral">
                             <option value="T"> Trabajo </option>
                             <option value="NTyB"> No trabajo y busco trabajo </option>
                             <option value="NTyNB"> No trabajo y no busco trabajo </option>
@@ -122,33 +148,38 @@
                 </div>
                 <div class="question" id="q13"> <b>Actualmente tu trabajo es...</b>
                     <div class="select">
-                        <select name="">
+                        <select name="" formControlName="trabajoActual">
                             <option value="RelDep"> En relación de dependencia </option>
                             <option value="Monot"> Soy monotributista </option>
-                            <option value="TrabInf"> Trabajo de manera informal </option>
+                            <option value="TrabInf"> Trabajo de manera informal
+                            </option>
                         </select>
                     </div>
                 </div>
                 <div class="question" id="q14"> <b>¿Tu puesto de trabajo actual esta relacionado con el sector IT?</b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio14" value="S"> Si </div>
-                        <div class="answer"> <input type="radio" name="radio14" value="N"> No </div>
+                        <div class="answer"> <input type="radio" name="trabajoActualProgramador" value="S"
+                                formControlName="trabajoActualProgramador"> Si </div>
+                        <div class="answer"> <input type="radio" name="trabajoActualProgramador" value="N"
+                                formControlName="trabajoActualProgramador"> No </div>
                     </div>
                 </div>
-                <div class="question" id="q15"> <b>¿Trabajás actualmente como programador?</b>
+                <!-- <div class="question" id="q15"> <b>¿Trabajás actualmente como programador?</b>
                     <div class="radioAnswer">
                         <div class="answer"> <input type="radio" name="radio15" value="S"> Si </div>
                         <div class="answer"> <input type="radio" name="radio15" value="N"> No </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="question" id="q16"><b>A través del Programa "Oportunidades Laborales", La Agencia de
                         Aprendizaje
                         a lo largo de la Vida ofrece a nuestros egresados/as búsquedas laborales que se ajustan a sus
                         perfiles profesionales <br> ¿Te interesaría recibir búsquedas laborales ajustadas a tu
                         perfil?</b>
                     <div class="radioAnswer">
-                        <div class="answer"> <input type="radio" name="radio16" value="S"> Si </div>
-                        <div class="answer"> <input type="radio" name="radio16" value="N"> No </div>
+                        <div class="answer"> <input type="radio" name="aceptaBusquedaLaboral" value="S"
+                                formControlName="aceptaBusquedaLaboral"> Si </div>
+                        <div class="answer"> <input type="radio" name="aceptaBusquedaLaboral" value="N"
+                                formControlName="aceptaBusquedaLaboral"> No </div>
                     </div>
                 </div>
 

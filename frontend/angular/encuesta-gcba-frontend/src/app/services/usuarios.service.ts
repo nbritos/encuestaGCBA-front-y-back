@@ -13,7 +13,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   loginUsuario(usuario: Usuario) {
-    return this.http.post(`${this.API_URI}/documento/`, usuario.documento);
+    return this.http.get(`${this.API_URI}/documento/${usuario.documento}`);
   }
 
   setToken(token: string) {

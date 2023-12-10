@@ -1,8 +1,6 @@
 package com.example.demo.Entidades;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -10,44 +8,64 @@ public class Encuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String titulo;
-    private Date fecha;
 
-    @OneToMany(mappedBy = "encuesta", cascade = CascadeType.ALL)
-    private List<Pregunta> preguntas = new ArrayList<>();
+    private String mail;
+    private String lugarDeResidencia;
+    private String nivelDeEstudios;
+    private String cuatrimestreCodo;
+    private String cursoCodo;
+    private String desempenioCodo;
+    private String continuaEstudiando;
+    private String tipoDeEstudio;
+    private String nivelEnProgramacion;
+    private String situacionLaboral;
+    private String trabajoActual;
+    private String trabajoActualProgramador;
+    private String aceptaBusquedaLaboral;
 
-    //CONSTRUCTOR
-    public Encuesta(){
+    // CONSTRUCTOR
+    public Encuesta() {
     }
 
-    //Getter
-    public int getId(){
+    // Getter
+    public int getId() {
         return id;
-    };
-    public String getTitulo(){
-        return titulo;
-    }
-    public Date getFecha() {
-        return fecha;
-    }
-    public List<Pregunta> getPreguntas() {
-        return preguntas;
     }
 
+    // Puedes mantener este método getId si es necesario para tu aplicación
+    // public int getId(){
+    //     return id;
+    // }
 
+    // Setter
+    public void setId(int paramId) {
+        this.id = paramId;
+    }
 
-    //Setter
-    public void setId(int paramId){
-        this.id=paramId;
-    }
-    public void setTitulo(String paramTitulo){
-        this.titulo=paramTitulo;
-    }
-    public void setFecha(Date paramFecha){
-        this.fecha=paramFecha;
-    }
-    public void setPreguntas(List<Pregunta> preguntas) {
-        this.preguntas = preguntas;
-    }
+    // Puedes mantener estos métodos si son necesarios para tu aplicación
+    // public String getTitulo() {
+    //     return titulo;
+    // }
+    // public Date getFecha() {
+    //     return fecha;
+    // }
+
+    // public void setTitulo(String paramTitulo) {
+    //     this.titulo = paramTitulo;
+    // }
+    // public void setFecha(Date paramFecha) {
+    //     this.fecha = paramFecha;
+    // }
+
+    // Métodos getters y setters para las nuevas propiedades
+    // ...
+
+    // Puedes mantener este método si es necesario para tu aplicación
+    // public List<Pregunta> getPreguntas() {
+    //     return preguntas;
+    // }
+
+    // public void setPreguntas(List<Pregunta> preguntas) {
+    //     this.preguntas = preguntas;
+    // }
 }
-
