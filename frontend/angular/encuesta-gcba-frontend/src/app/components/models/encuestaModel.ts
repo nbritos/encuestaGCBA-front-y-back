@@ -1,4 +1,5 @@
 export interface Encuesta {
+    id:number;
     mail: string;
     lugarDeResidencia: string;
     nivelDeEstudios: string;

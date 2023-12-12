@@ -12,7 +12,6 @@ export class EncuestaService {
     constructor(private http: HttpClient) { }
 
     enviarEncuesta(encuesta: Encuesta): Observable<any> {
-        const url = `${this.apiUrl}/responder`; 
-        return this.http.post(url, encuesta);
-    }
+        return this.http.post<any>(`${this.apiUrl}/crear`, encuesta);
+      }
 }

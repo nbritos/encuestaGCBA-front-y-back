@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/encuesta")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -15,18 +18,18 @@ public class EncuestaController {
     @Autowired
     private EncuestaService encuestaService;
 
-    @PostMapping("/responder")
-    public ResponseEntity<String> responderEncuesta(@RequestBody Encuesta encuesta) {
+    @PostMapping("/crear")
+    public ResponseEntity<String> crearEncuesta(@RequestBody Encuesta encuesta) {
         try {
-            // Puedes acceder a los campos de la encuesta directamente desde el objeto encuesta
-            // por ejemplo, encuesta.getMail(), encuesta.getLugarDeResidencia(), etc.
-
-            // Lógica para procesar la encuesta en el servicio
+            // Lógica para procesar y guardar la encuesta en el servicio
             encuestaService.procesarEncuesta(encuesta);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body("Encuesta guardada exitosamente");
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Encuesta creada exitosamente");
+            return ResponseEntity.status(HttpStatus.CREATED).body(response.toString());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ocurrió un error al guardar la encuesta.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 }
+
