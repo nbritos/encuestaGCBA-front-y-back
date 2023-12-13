@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Encuesta } from '../models/encuestaModel'; // Asegúrate de poner la ruta correcta a tu modelo
 import { HttpClientModule } from '@angular/common/http';
 
+
 @Component({
     selector: 'app-encuesta-responder',
     standalone: true,
@@ -35,24 +36,30 @@ export class EncuestaResponderComponent {
     }
 
     enviarEncuesta() {
-        if (this.form.valid) {
-            const encuesta = this.form.value;
 
-            this.encuestaService.enviarEncuesta(encuesta).subscribe(
-                () => {
-                    console.log('Encuesta enviada exitosamente desde el front');
-                },
-                error => {
-                    console.error('Error al enviar la encuesta', error);
+        const encuesta = this.form.value;
+
+        this.encuestaService.enviarEncuesta(encuesta).subscribe(
+            (res: any) => {
+                console.log('respuesta del back: ', res);
+                if (res && res.status === 'OK') {
+                    console.log('respuesta enviada correctamente0');
+                    this.form.reset();
+                } else {
+                    console.error('Error en el backend');
                 }
-            );
-        } else {
-            console.warn('Formulario no válido. Por favor, completa todos los campos.');
-        }
+            }, error => {
+                console.error('Error desde el front al enviar la respuesta')
+            }
+        )
     }
 
     validarCampos() {
         console.log('Validando los campos de la encuesta');
-        this.enviarEncuesta();
+        if (this.form.valid) {
+            this.enviarEncuesta();
+        } else {
+            console.warn('Formulario no válido. Por favor, completa todos los campos.');
+        }
     }
 }
