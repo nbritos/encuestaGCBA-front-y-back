@@ -1,12 +1,9 @@
-<h1>Complete el siguiente campo para realizar la encuesta</h1>
 <form (submit)="ingresar()" method="post">
     <fieldset>
         <div>
-
             <input type="text" [(ngModel)]="nuevo.documento" name="nuevo.documento" placeholder="DNI">
             <button (click)="validarDNI()">VERIFICAR</button>
             <div *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
         </div>
     </fieldset>
-
 </form>

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           console.log("login exitoso");
           this.usuarioService.setToken(res.token);
           console.log(res.token);
-          this.router.navigate(['encuesta/responder'])
+          this.ingresar();
         }
       },
       (error: any) => {
@@ -55,3 +55,4 @@ export class LoginComponent implements OnInit {
     this.router.navigate(["encuesta/responder"]);
   }
 }
+  

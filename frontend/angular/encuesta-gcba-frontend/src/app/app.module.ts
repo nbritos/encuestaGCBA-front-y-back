@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosService } from './services/usuarios.service';
 import { EncuestaService } from './services/encuestaService';
+import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 
 
 
@@ -21,7 +22,8 @@ import { EncuestaService } from './services/encuestaService';
   ],
   providers:[
     UsuariosService,
-    EncuestaService
+    EncuestaService,
+    AgradecimientoComponent
   ]
 })
 export class AppModule { }

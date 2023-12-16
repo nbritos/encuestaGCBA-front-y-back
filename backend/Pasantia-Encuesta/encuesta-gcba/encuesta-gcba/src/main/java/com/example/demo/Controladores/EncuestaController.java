@@ -18,15 +18,18 @@ public class EncuestaController {
     @Autowired
     private EncuestaService encuestaService;
 
-        @PostMapping("/crear")
-        public ResponseEntity<String> crearEncuesta(@RequestBody Encuesta encuesta) {
-            try {
-                // Lógica para procesar y guardar la encuesta en el servicio
-                encuestaService.procesarEncuesta(encuesta);
-                return ResponseEntity.status(HttpStatus.OK).body("Encuesta creada en el back");
-            } catch (Exception e) {
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-            }
+    @PostMapping("/crear")
+    public ResponseEntity<Map<String, String>> crearEncuesta(@RequestBody Encuesta encuesta) {
+        try {
+            // Lógica para procesar y guardar la encuesta en el servicio
+            encuestaService.procesarEncuesta(encuesta);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Encuesta creada en el back");
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
+    }
+
 }
 

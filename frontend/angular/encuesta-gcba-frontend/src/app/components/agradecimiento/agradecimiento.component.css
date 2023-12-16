@@ -3,20 +3,13 @@ body {
     margin: 0;
 }
 
-/* header {
-    background-color: #ffcc00;
-    padding: 10px;
-    width: 100%
-} */
-
 main {
     padding: 50px;
     text-align: center;
     flex: 1; /* Esto asegura que ocupe el espacio restante verticalmente */
 }
 
-input
-{
+input {
     width: 250px;
 }
 
@@ -52,7 +45,6 @@ input
     border-color: #FFFF00; 
 }
 
-
 select {
     margin-top: 10px;
     width: 400px;
@@ -86,8 +78,6 @@ footer {
     line-height: 30px;
 }
 
-
-
 .question::after {
     content: "";
     display: block;
@@ -97,4 +87,3 @@ footer {
 .question label strong {
     font-weight: bold; /* Establece el texto de las preguntas en negrita */
 }
-
